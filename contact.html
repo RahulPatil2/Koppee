@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="style.css" />
+  <!-- Optional Icons/Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+
+    /* Hero Banner */
+  .hero2 {
+    height: 50vh;
+    background: url('images/coffee-bg.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+  background-color: rgba(17, 17, 17, 0.9);
+
+  }
+
+  .hero2 h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #fff;
+    z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    .hero2 {
+      height: auto;
+      padding: 60px 15px;
+    }
+
+    .hero1 h2 {
+      font-size: 32px;
+    }
+  }
+
+  /* General Styling & Reset (Basic) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Fallback font */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f7f0; /* Light beige background */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Section Specific Styling */
+.contact-section {
+    text-align: center;
+    padding: 80px 0;
+}
+
+.section-subtitle {
+    font-size: 0.9em;
+    color: #a08c6d; /* A brownish-gold color for the subtitle */
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.section-title {
+    font-size: 2.8em;
+    color: #333;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+/* Contact Info Grid */
+.contact-info-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-bottom: 60px;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.contact-info-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    flex: 1; /* Allows items to grow and shrink */
+    min-width: 280px; /* Minimum width for items */
+    text-align: center;
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #f0e9d6; /* Light background for icons */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+}
+
+.icon-circle img {
+    width: 28px; /* Adjust icon size */
+    height: 28px;
+    object-fit: contain;
+}
+
+
+.contact-info-item h3 {
+    font-size: 1.4em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.contact-info-item p {
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+/* Contact Form and Map Container */
+.contact-form-map-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allow wrapping for responsiveness */
+}
+
+.map-container {
+    flex: 2; /* Map takes more space */
+    min-width: 400px; /* Minimum width for the map */
+    height: 450px; /* Fixed height for the map */
+    border-radius: 8px;
+    overflow: hidden; /* Ensures the map fits within border-radius */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.contact-form {
+    flex: 1; /* Form takes remaining space */
+    min-width: 300px; /* Minimum width for the form */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between form elements */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: inherit; /* Inherit font from body */
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 120px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #a08c6d; /* Highlight border on focus */
+    box-shadow: 0 0 5px rgba(160, 140, 109, 0.3);
+}
+
+.contact-form button {
+    background-color: #a08c6d; /* Button background color */
+    color: #fff;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start; /* Align button to the left */
+}
+
+.contact-form button:hover {
+    background-color: #8c775a; /* Darker shade on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-info-grid,
+    .contact-form-map-container {
+        flex-direction: column;
+        align-items: center; /* Center items in column layout */
+    }
+
+    .contact-info-item,
+    .map-container,
+    .contact-form {
+        width: 90%; /* Make them take more width on smaller screens */
+        min-width: unset; /* Remove min-width restriction */
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+    }
+
+    .contact-info-item {
+        padding: 20px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+}
+  </style>
+</head>
+<body>
+
+     <!-- Hero Section -->
+  <section class="hero2">
+    <div class="hero-content">
+      <h1>SERVICES</h1>
+      <p>Home / Services</p>
+    </div>
+  </section>
+
+     <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">KOPPEE</div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="#">Pages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  
+
+    <section class="contact-section">
+        <div class="container">
+            <p class="section-subtitle">CONTACT US</p>
+            <h1 class="section-title">Feel Free To Contact</h1>
+
+            <div class="contact-info-grid">
+                <div class="contact-info-item">
+                    <div class="icon-circle">
+                        <img src="https://via.placeholder.com/24/000000/FFFFFF?text=📍" alt="Location Icon">
+                    </div>
+                    <h3>Address</h3>
+                    <p>123 Street, New York, USA</p>
+                    <p>United States</p>
+                </div>
+                <div class="contact-info-item">
+                    <div class="icon-circle">
+                        <img src="https://via.placeholder.com/24/000000/FFFFFF?text=📞" alt="Phone Icon">
+                    </div>
+                    <h3>Phone</h3>
+                    <p>+012 345 6789</p>
+                </div>
+                <div class="contact-info-item">
+                    <div class="icon-circle">
+                        <img src="https://via.placeholder.com/24/000000/FFFFFF?text=✉️" alt="Email Icon">
+                    </div>
+                    <h3>Email</h3>
+                    <p>info@example.com</p>
+                </div>
+            </div>
+
+            <div class="contact-form-map-container">
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.253337667554!2d-73.98782488459468!3d40.74844067932822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a099a98!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1678912345678!5m2!1sen!2sus"
+                        width="100%"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="text" name="subject" placeholder="Subject">
+                        <textarea name="message" placeholder="Message"></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer-section">
+  <div class="footer-container">
+    <!-- Get in Touch -->
+    <div class="footer-box">
+      <h4>GET IN TOUCH</h4>
+      <p>📍 123 Street, New York, USA</p>
+      <p>📞 +012 345 67890</p>
+      <p>📧 info@example.com</p>
+    </div>
+
+    <!-- Follow Us -->
+    <div class="footer-box">
+      <h4>FOLLOW US</h4>
+      <p>Amet elitr vero magna sed ipsum sit kasd sea elitr lorem rebum</p>
+      <div class="social-icons">
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-facebook-f"></i></a>
+        <a href="#"><i class="fa fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Open Hours -->
+    <div class="footer-box">
+      <h4>OPEN HOURS</h4>
+      <p><strong>MONDAY - FRIDAY</strong><br>8.00 AM - 8.00 PM</p>
+      <p><strong>SATURDAY - SUNDAY</strong><br>2.00 PM - 8.00 PM</p>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="footer-box">
+      <h4>NEWSLETTER</h4>
+      <p>Amet elitr vero magna sed ipsum sit kasd sea elitr lorem rebum</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Your Email" />
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>
+      Copyright © <span class="highlight">Domain</span>. All Rights Reserved.
+    </p>
+    <p>
+      Designed by <span class="highlight">HTML Codex</span> Distributed by <span class="highlight">ThemeWagon</span>
+    </p>
+  </div>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top">⬆</a>
+</footer>
+    
+</body>
+</html>
